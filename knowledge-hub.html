@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Junayed Rahman's continuous learning hub. Details on professional bookshelf, favorite podcasts, newsletters, and active data technology studies.">
+  <title>Knowledge Hub | Junayed Rahman Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hub-hero {
+      background: radial-gradient(circle at 50% 10%, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+      padding: 6rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- --- NAVIGATION --- -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-symbol">J</div>
+        <span>JUNAYED RAHMAN</span>
+      </a>
+      
+      <button class="hamburger" aria-label="Toggle Navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+        <li><a href="knowledge-hub.html" class="nav-link active">Knowledge Hub</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- --- KNOWLEDGE HUB HERO --- -->
+  <header class="hub-hero">
+    <div class="container" style="padding-top: 2rem;">
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 1rem;">Continuous Knowledge Hub</h1>
+      <p style="max-width: 600px; color: var(--text-secondary); font-size: 1.1rem;">A dedicated center showcasing ongoing learning, book reviews, podcast insights, newsletter reviews, and technical studies.</p>
+    </div>
+  </header>
+
+  <!-- --- KNOWLEDGE SECTIONS --- -->
+  <section class="section-padding">
+    <div class="container">
+      
+      <!-- 1. Bookshelf -->
+      <div class="hub-section">
+        <h3>Analytics Bookshelf</h3>
+        <p style="color:var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px;">A collection of books that have significantly influenced my perspective on data design, cognitive visual modeling, and statistical thinking.</p>
+        
+        <div class="bookshelf-grid">
+          
+          <!-- Book 1 -->
+          <div class="glass-card book-card">
+            <div class="book-cover-mock" style="border-left-color: #00D4FF;">📊</div>
+            <div class="book-details">
+              <h4 class="book-title">Storytelling with Data</h4>
+              <div class="book-author">Cole Nussbaumer Knaflic</div>
+              <div class="book-rating">★★★★★</div>
+              <p class="book-takeaway">"Design dashboards with high data-to-ink ratios. Erase cognitive clutter to direct the executive's focus strictly to statistical anomalies."</p>
+            </div>
+          </div>
+
+          <!-- Book 2 -->
+          <div class="glass-card book-card">
+            <div class="book-cover-mock" style="border-left-color: #10B981;">🛢️</div>
+            <div class="book-details">
+              <h4 class="book-title">Designing Data-Intensive Applications</h4>
+              <div class="book-author">Martin Kleppmann</div>
+              <div class="book-rating">★★★★★</div>
+              <p class="book-takeaway">"Understand deep trade-offs between relational schemas and document stores to build high-concurrency staging tables."</p>
+            </div>
+          </div>
+
+          <!-- Book 3 -->
+          <div class="glass-card book-card">
+            <div class="book-cover-mock" style="border-left-color: #FF5E7E;">📈</div>
+            <div class="book-details">
+              <h4 class="book-title">The Signal and the Noise</h4>
+              <div class="book-author">Nate Silver</div>
+              <div class="book-rating">★★★★☆</div>
+              <p class="book-takeaway">"Isolate true predictive indicators from white noise by adjusting probability estimates based on new operational evidence."</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. Podcasts -->
+      <div class="hub-section" style="margin-top: 5rem;">
+        <h3>Podcasts I Follow</h3>
+        <p style="color:var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px;">Regular listening streams providing updates on the modern data stack, data engineering, and analytics operations.</p>
+        
+        <div class="podcasts-grid">
+          
+          <!-- Pod 1 -->
+          <div class="glass-card podcast-card">
+            <div class="pod-header">
+              <div class="pod-logo-box">🎙️</div>
+              <div class="pod-meta">
+                <h4>SuperDataScience</h4>
+                <span>Jon Krohn</span>
+              </div>
+            </div>
+            <p class="pod-takeaway">Focuses on machine learning architectures, statistical modeling, and tools in the analytics ecosystem. Recently learned about LLM integrations in traditional BI reporting pipelines.</p>
+          </div>
+
+          <!-- Pod 2 -->
+          <div class="glass-card podcast-card">
+            <div class="pod-header">
+              <div class="pod-logo-box">📊</div>
+              <div class="pod-meta">
+                <h4>Analytics Power Hour</h4>
+                <span>Michael, Moe, Tim</span>
+              </div>
+            </div>
+            <p class="pod-takeaway">Discusses dashboard design practices, corporate data team structures, and analytics ROI. Explores methods for measuring visual dashboard utilization in corporate spaces.</p>
+          </div>
+
+          <!-- Pod 3 -->
+          <div class="glass-card podcast-card">
+            <div class="pod-header">
+              <div class="pod-logo-box">⚙️</div>
+              <div class="pod-meta">
+                <h4>The dbt Podcast</h4>
+                <span>dbt Labs</span>
+              </div>
+            </div>
+            <p class="pod-takeaway">Dives into analytics engineering, version-controlled transformations, and data modeling standards. Provides insights on setting up testing frameworks for billing pipelines.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. Blogs & Newsletters -->
+      <div class="hub-section" style="margin-top: 5rem;">
+        <h3>Blogs & Newsletters</h3>
+        <p style="color:var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px;">Publications read regularly to track industry trends and advanced design styles.</p>
+        
+        <div class="blogs-grid">
+          
+          <!-- Blog 1 -->
+          <div class="glass-card blog-card">
+            <h4>McKinsey Digital Insights</h4>
+            <span class="blog-focus">Strategy & Ops</span>
+            <p class="blog-val">Provides high-level case studies mapping analytics systems directly to measurable corporate ROI. Highly valuable for learning corporate strategic communication.</p>
+          </div>
+
+          <!-- Blog 2 -->
+          <div class="glass-card blog-card">
+            <h4>Towards Data Science</h4>
+            <span class="blog-focus">Technical Writing</span>
+            <p class="blog-val">A collaborative blog featuring detailed tutorials on Python implementations, complex SQL scripts, and statistical modeling walkthroughs.</p>
+          </div>
+
+          <!-- Blog 3 -->
+          <div class="glass-card blog-card">
+            <h4>Benn Stancil's Newsletter</h4>
+            <span class="blog-focus">Modern Data Stack</span>
+            <p class="blog-val">Weekly industry critique exploring trends, BI product lifecycles, and future trajectories of analytical platforms and modeling tools.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4. Currently Learning -->
+      <div class="hub-section" style="margin-top: 5rem;">
+        <h3>Active Learning Pipeline</h3>
+        <p style="color:var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px;">A transparent view of active technical study paths designed to advance my capabilities in analytics engineering.</p>
+        
+        <div class="learning-grid">
+          
+          <div class="glass-card learning-card">
+            <span class="learning-tag">Analytics Engineering</span>
+            <h4 class="learning-title">dbt (Data Build Tool)</h4>
+            <span class="learning-status-pill">Active Study</span>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Structuring version-controlled staging layers and testing SQL transformations.</p>
+          </div>
+
+          <div class="glass-card learning-card">
+            <span class="learning-tag">AI Engineering</span>
+            <h4 class="learning-title">AI for Data Analysts</h4>
+            <span class="learning-status-pill">Active Study</span>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Using programmatic APIs and embedding LLMs for automated outlier summaries.</p>
+          </div>
+
+          <div class="glass-card learning-card">
+            <span class="learning-tag">Advanced BI</span>
+            <h4 class="learning-title">Advanced Power BI (PL-300+)</h4>
+            <span class="learning-status-pill" style="color:var(--success); background:rgba(16,185,129,0.05);">Mastered</span>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Optimizing large-scale data queries, complex DAX parameters, and row-level security.</p>
+          </div>
+
+          <div class="glass-card learning-card">
+            <span class="learning-tag">Actuarial Analytics</span>
+            <h4 class="learning-title">Insurance Risk Modeling</h4>
+            <span class="learning-status-pill">Active Study</span>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Studying advanced risk exposure patterns, reserving strategies, and loss dynamics.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="logo">
+        <div class="logo-symbol">J</div>
+        <span>JUNAYED RAHMAN</span>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Junayed Rahman. All rights reserved. Premium Data Portfolio.
+      </div>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="projects.html" class="footer-link">Projects</a>
+        <a href="case-studies.html" class="footer-link">Case Studies</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SCRIPTS SYSTEM --- -->
+  <script src="js/main.js"></script>
+</body>
+</html>

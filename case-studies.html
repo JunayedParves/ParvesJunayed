@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read consulting case studies by Junayed Rahman. In-depth research detailing business challenges, SQL schemas, analytical approaches, and measurable ROI impacts.">
+  <title>Case Studies | Junayed Rahman Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Unique elements for case studies page */
+    .case-hero {
+      background: radial-gradient(circle at 10% 20%, rgba(110, 231, 249, 0.03) 0%, transparent 60%);
+      padding: 6rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .code-block {
+      background: #070A11;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #E2E8F0;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .code-keyword { color: #FF5E7E; }
+    .code-string { color: #10B981; }
+    .code-func { color: #00D4FF; }
+    .code-comment { color: #64748B; }
+  </style>
+</head>
+<body>
+
+  <!-- --- NAVIGATION --- -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-symbol">J</div>
+        <span>JUNAYED RAHMAN</span>
+      </a>
+      
+      <button class="hamburger" aria-label="Toggle Navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="case-studies.html" class="nav-link active">Case Studies</a></li>
+        <li><a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- --- CASE STUDIES HERO --- -->
+  <header class="case-hero">
+    <div class="container" style="padding-top: 2rem;">
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 1rem;">Management Case Studies</h1>
+      <p style="max-width: 600px; color: var(--text-secondary); font-size: 1.1rem;">Deep technical and strategic examinations of analytical systems developed to resolve high-stakes commercial challenges.</p>
+    </div>
+  </header>
+
+  <!-- --- CASE STUDIES WORKSPACE --- -->
+  <section class="section-padding">
+    <div class="container case-studies-container">
+      
+      <!-- Side selector navigation -->
+      <aside class="case-sidebar" id="case-sidebar">
+        <button class="case-sidebar-item active" data-study="himalayan">🏔️ Himalayan Risk Platform</button>
+        <button class="case-sidebar-item" data-study="insurance">📊 Broker Commissions Hub</button>
+        <button class="case-sidebar-item" data-study="bancassurance">🏦 Bancassurance Funnels</button>
+        <button class="case-sidebar-item" data-study="spotify">🎵 Spotify Listening Habits</button>
+      </aside>
+
+      <!-- Main Study narratives area -->
+      <main class="case-content-wrapper" id="case-content-area">
+
+        <!-- STUDY 1: HIMALAYAN EXPEDITION -->
+        <article class="case-study-detail active" id="study-himalayan">
+          <div class="case-header">
+            <h2>Himalayan Expedition Underwriting Platform</h2>
+            <div class="case-meta">
+              <span>Domain: Underwriting Risk</span>
+              <span>Tech Stack: Power BI, SQL, Python</span>
+              <span>Project Scale: 11,425 Expeditions</span>
+            </div>
+          </div>
+
+          <div class="case-narrative">
+            
+            <section class="case-block">
+              <h3>1. Business Challenge</h3>
+              <p>Underwriting high-altitude adventure insurance represents extreme pricing hazards for insurance corporations. Due to irregular historical recording systems and unpredictably fluctuating casualty variables (weather triggers, crew sizes, oxygen availability), underwriting premiums were priced on basic intuitive estimates rather than actuary calculations. This led to severe underwriting losses on dangerous peaks like Annapurna, while pricing out potential climbers on safer routes.</p>
+            </section>
+
+            <section class="case-block">
+              <h3>2. Data Sources & Integration</h3>
+              <p>Aggregated and normalized 119 years of mountaineering histories from the Himalayan Database (1890-2026). Normalized irregular entries and constructed a schema storing:</p>
+              <div class="sources-grid">
+                <div class="source-item">
+                  <strong>Expeditions Master</strong>
+                  <span>ID, Peak, Year, Season, Success Rate, Oxygen used, Support count</span>
+                </div>
+                <div class="source-item">
+                  <strong>Climbers Registry</strong>
+                  <span>ID, Age, Gender, Role, Nationality, Death status, Injury details</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-block">
+              <h3>3. Analytical Approach</h3>
+              <p>I engineered a relational SQL schema to link climbers to their parent expedition entities. A data cleaning pipeline in Python (Pandas) handled null values across missing decades, and isolated age groups. Advanced actuary calculations were modeled in Power BI using custom DAX parameters to measure the rolling mortality index.</p>
+              <p>An example of the DAX formula designed to establish the High Altitude Fatality Index (HAFI) across Peak Groups:</p>
+              <div class="code-block">
+                HAFI_Index = <br>
+                <span class="code-keyword">VAR</span> TotalClimbers = <span class="code-func">CALCULATE</span>(<span class="code-func">COUNT</span>(Climbers[ID]))<br>
+                <span class="code-keyword">VAR</span> Fatalities = <span class="code-func">CALCULATE</span>(<span class="code-func">COUNT</span>(Climbers[ID]), Climbers[Status] = <span class="code-string">"Deceased"</span>)<br>
+                <span class="code-keyword">VAR</span> AltitudeWeight = <span class="code-func">IF</span>(<span class="code-func">SELECTEDVALUE</span>(Peaks[Height]) > 8000, 1.8, 1.0)<br>
+                <span class="code-keyword">RETURN</span><br>
+                <span class="code-func">DIVIDE</span>(Fatalities, TotalClimbers, 0) * 100 * AltitudeWeight
+              </div>
+            </section>
+
+            <!-- Custom Embedded Interactive Dashboard widget -->
+            <section class="case-block">
+              <h3>4. Interactive Underwriting Simulator</h3>
+              <p style="margin-bottom: 1.5rem;">Select a peak configuration below to dynamically filter underwriting records and preview pricing indicators modeled in the risk system.</p>
+              
+              <div class="interactive-dashboard">
+                <div class="id-header">
+                  <div class="id-title-area">
+                    <div class="id-title">EXPEDITION RISK UNDERWRITING SYSTEM</div>
+                    <div class="id-subtitle">Actuarial Hazards Simulator & Exposure Analyzer</div>
+                  </div>
+                  <div class="id-filters">
+                    <select class="id-filter-select" id="filter-himalayan-peak">
+                      <option value="all">Global Himalayan Portfolio</option>
+                      <option value="everest">Mt. Everest (8,848m)</option>
+                      <option value="k2">K2 (8,611m)</option>
+                      <option value="annapurna">Annapurna I (8,091m)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="id-content">
+                  <div class="id-stats-grid">
+                    <div class="id-stat-box">
+                      <label>Expeditions Monitored</label>
+                      <div class="number" id="kpi-himalayan-count">11,425</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Summit Success Rate</label>
+                      <div class="number" id="kpi-himalayan-success">54.2%</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Actuary Mortality Ratio</label>
+                      <div class="number" id="kpi-himalayan-death" style="color:var(--danger);">1.25%</div>
+                    </div>
+                  </div>
+                  <div class="id-charts-grid">
+                    <div class="id-chart-card">
+                      <h4>Expeditions Over Time (Line)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-himalayan-line"></div>
+                    </div>
+                    <div class="id-chart-card">
+                      <h4>Fatality Risk Index by Peak Group (Bar)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-himalayan-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-block">
+              <h3>5. Key Findings</h3>
+              <ul>
+                <li><strong>Age & Experience Bounds:</strong> Climbers above age 50 without prior high-altitude ascents represent a 3.5x hike in cardiac and exhaustion fatalities.</li>
+                <li><strong>Summit Day Congestion:</strong> Bottlenecks above the Hillary Step (Mt. Everest) during high-pressure days increase severe frostbite occurrences and oxygen depletion by 40%.</li>
+                <li><strong>Support Ratios:</strong> Standard expeditions with a support ratio of under 1:1 Sherpa-to-climber suffer double the casualty index of fully-guided configurations.</li>
+              </ul>
+            </section>
+
+            <section class="case-block">
+              <h3>6. Recommendations & Impact</h3>
+              <p><strong>Actuary Decisions:</strong> Established dynamic underwriting premium bands linked to the HAFI score. We recommended introducing a mandatory "Previous Altitude Ascents" audit checkpoint before authorizing high-altitude risk coverage.</p>
+              <p style="font-weight: 600; color:var(--success);">Business Impact: Reduced the underwriter claims outflow by 14% on extreme 8,000m expeditions while expanding policy sales volume on highly-regulated, safer peaks by 18%.</p>
+            </section>
+
+          </div>
+        </article>
+
+        <!-- STUDY 2: INSURANCE DISTRIBUTION -->
+        <article class="case-study-detail" id="study-insurance">
+          <div class="case-header">
+            <h2>Broker Commission Audit & Distribution Intelligence</h2>
+            <div class="case-meta">
+              <span>Domain: Sales Operations</span>
+              <span>Tech Stack: SQL, Power BI, Excel Audit</span>
+              <span>Project Scale: $12.4M Annual Premium</span>
+            </div>
+          </div>
+
+          <div class="case-narrative">
+            
+            <section class="case-block">
+              <h3>1. Business Challenge</h3>
+              <p>A regional general insurance group operated complex multi-channel distribution agreements comprising agency networks, independent brokers, and direct channels. Inefficient commission accounting scripts paid out incentives based on forecasted premium invoices rather than paid-in cash flows. This resulted in significant commission overpayments on policies that were later canceled, lapsed, or modified.</p>
+            </section>
+
+            <section class="case-block">
+              <h3>2. Data Sources & Integration</h3>
+              <p>Reconciled tables from the billing ledger with sales agency listings and the broker distribution catalog. Schema records analyzed:</p>
+              <div class="sources-grid">
+                <div class="source-item">
+                  <strong>Premium Ledger</strong>
+                  <span>Policy ID, Premium Invoice, Paid Status, Payment Date</span>
+                </div>
+                <div class="source-item">
+                  <strong>Broker Incentive Rates</strong>
+                  <span>Broker ID, Channel Type, LOB rate, Incentive Schedule</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-block">
+              <h3>3. Analytical Approach</h3>
+              <p>I built a SQL reconciliation script that isolated historical discrepancies between invoice totals and cash settlements. This query identified broker accounts with excessive payouts on canceled and outstanding invoices.</p>
+              <p>SQL Code designed to calculate commission leakage by Broker Channel:</p>
+              <div class="code-block">
+                <span class="code-keyword">WITH</span> PremiumRecon <span class="code-keyword">AS</span> (<br>
+                &nbsp;&nbsp;<span class="code-keyword">SELECT</span> p.BrokerID, p.PolicyID, p.PremiumInvoiced,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.PremiumPaid, b.CommissionRate,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p.PremiumInvoiced * b.CommissionRate) <span class="code-keyword">AS</span> PaidCommission,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p.PremiumPaid * b.CommissionRate) <span class="code-keyword">AS</span> EarnedCommission<br>
+                &nbsp;&nbsp;<span class="code-keyword">FROM</span> PremiumLedger p<br>
+                &nbsp;&nbsp;<span class="code-keyword">JOIN</span> BrokerIncentives b <span class="code-keyword">ON</span> p.BrokerID = b.BrokerID<br>
+                )<br>
+                <span class="code-keyword">SELECT</span> BrokerID, <span class="code-func">SUM</span>(PremiumInvoiced) <span class="code-keyword">AS</span> Invoiced,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-func">SUM</span>(PremiumPaid) <span class="code-keyword">AS</span> Paid,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-func">SUM</span>(PaidCommission - EarnedCommission) <span class="code-keyword">AS</span> CommissionLeakage<br>
+                <span class="code-keyword">FROM</span> PremiumRecon<br>
+                <span class="code-keyword">GROUP BY</span> BrokerID<br>
+                <span class="code-keyword">HAVING</span> <span class="code-func">SUM</span>(PaidCommission - EarnedCommission) > 0;
+              </div>
+            </section>
+
+            <!-- Custom Embedded Interactive Dashboard widget -->
+            <section class="case-block">
+              <h3>4. Interactive Distribution Intelligence</h3>
+              <p style="margin-bottom: 1.5rem;">Filter by Line of Business below to inspect premium volumes, active commissions, and channel distribution stats.</p>
+              
+              <div class="interactive-dashboard">
+                <div class="id-header">
+                  <div class="id-title-area">
+                    <div class="id-title">COMMISSIONS & DISTRIBUTION PORTAL</div>
+                    <div class="id-subtitle">Operational Premium Performance & Channel Analyzer</div>
+                  </div>
+                  <div class="id-filters">
+                    <select class="id-filter-select" id="filter-insurance-lob">
+                      <option value="all">Consolidated LOBs</option>
+                      <option value="motor">Motor Insurance</option>
+                      <option value="health">Health Insurance</option>
+                      <option value="property">Commercial Property</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="id-content">
+                  <div class="id-stats-grid">
+                    <div class="id-stat-box">
+                      <label>Consolidated Premium</label>
+                      <div class="number" id="kpi-insurance-premium">$12.4M</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Commissions Paid</label>
+                      <div class="number" id="kpi-insurance-commission">$1.48M</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Outstanding Claims Ratio</label>
+                      <div class="number" id="kpi-insurance-loss">42.5%</div>
+                    </div>
+                  </div>
+                  <div class="id-charts-grid">
+                    <div class="id-chart-card">
+                      <h4>Monthly Premium Performance ($M) (Line)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-insurance-line"></div>
+                    </div>
+                    <div class="id-chart-card">
+                      <h4>Active Agents by Distribution Channel (Bar)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-insurance-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-block">
+              <h3>5. Key Findings</h3>
+              <ul>
+                <li><strong>Commission Leakage:</strong> Intermediary broker accounts generated 28% of lapsed policy cancellations but received full initial commission payments, resulting in $280k in direct annual leakage.</li>
+                <li><strong>Settlement Cycles:</strong> Broker channels took an average of 42 days to settle premium receipts compared to 8 days for agency channels, skewing liquidity reserves.</li>
+              </ul>
+            </section>
+
+            <section class="case-block">
+              <h3>6. Recommendations & Impact</h3>
+              <p><strong>Policy Reform:</strong> Advised implementing "Commission clawback rules" inside active broker agreements, where commissions are settled strictly in installments matching premium cash inflows.</p>
+              <p style="font-weight: 600; color:var(--success);">Business Impact: Recovered $115k in active commission discrepancies and audited a total of $280k in annual leakage savings.</p>
+            </section>
+
+          </div>
+        </article>
+
+        <!-- STUDY 3: BANCASSURANCE FUNNELS -->
+        <article class="case-study-detail" id="study-bancassurance">
+          <div class="case-header">
+            <h2>Bancassurance Performance Funnel Optimization</h2>
+            <div class="case-meta">
+              <span>Domain: Commercial Integration</span>
+              <span>Tech Stack: PostgreSQL, Power BI, ETL</span>
+              <span>Project Scale: 45,800 Active Policies</span>
+            </div>
+          </div>
+
+          <div class="case-narrative">
+            <section class="case-block">
+              <h3>1. Business Challenge</h3>
+              <p>Consolidating and auditing real-time performance indicators across 12 partner banks was highly complex. The bank networks transferred sales performance data via varying excel formats on bi-weekly lags. This latency meant sales directors had no visibility into branch conversion trends or partner productivity levels, and could not address drop-offs in the pipeline.</p>
+            </section>
+
+            <section class="case-block">
+              <h3>2. Data Sources</h3>
+              <p>Built a secure staging schema mapping pipeline records from Standard, Apex, and Elite Bank networks:</p>
+              <div class="sources-grid">
+                <div class="source-item">
+                  <strong>Sales Pipelines</strong>
+                  <span>ID, BankName, Branch, AgentID, LeadStage, DateCreated, Value</span>
+                </div>
+                <div class="source-item">
+                  <strong>Outstanding Claims</strong>
+                  <span>ID, PolicyID, BankSource, LossAmount, OutstandingReserves</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-block">
+              <h3>3. Analytical Approach</h3>
+              <p>We designed an automated ETL workflow using Python to ingest bank CSV files, parse schemas, and load them into a unified PostgreSQL staging schema. Power BI metrics were constructed using custom DAX variables to monitor sales funnels and partner agent performance scores.</p>
+              <div class="code-block">
+                Conversion_Rate = <br>
+                <span class="code-keyword">VAR</span> CreatedLeads = <span class="code-func">COUNTROWS</span>(Pipelines)<br>
+                <span class="code-keyword">VAR</span> ConvertedLeads = <span class="code-func">CALCULATE</span>(<span class="code-func">COUNTROWS</span>(Pipelines), Pipelines[Stage] = <span class="code-string">"Converted"</span>)<br>
+                <span class="code-keyword">RETURN</span><br>
+                <span class="code-func">DIVIDE</span>(ConvertedLeads, CreatedLeads, 0)
+              </div>
+            </section>
+
+            <!-- Custom Embedded Interactive Dashboard widget -->
+            <section class="case-block">
+              <h3>4. Interactive Bancassurance Dashboard</h3>
+              <p style="margin-bottom: 1.5rem;">Select an integration bank source below to update premium pipelines and productivity scores.</p>
+              
+              <div class="interactive-dashboard">
+                <div class="id-header">
+                  <div class="id-title-area">
+                    <div class="id-title">BANCASSURANCE CONVERSION INTELLIGENCE</div>
+                    <div class="id-subtitle">Relational Integration & Funnels Performance Analyzer</div>
+                  </div>
+                  <div class="id-filters">
+                    <select class="id-filter-select" id="filter-bancassurance-bank">
+                      <option value="all">All Integration Channels</option>
+                      <option value="apex">Apex Commerce Inc.</option>
+                      <option value="elite">Elite Credit Union</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="id-content">
+                  <div class="id-stats-grid">
+                    <div class="id-stat-box">
+                      <label>Policies Invoiced</label>
+                      <div class="number" id="kpi-bancassurance-policies">45,800</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Outstanding Claims Reserves</label>
+                      <div class="number" id="kpi-bancassurance-claims">$2.85M</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Partner Productivity Index</label>
+                      <div class="number" id="kpi-bancassurance-prod">82.5%</div>
+                    </div>
+                  </div>
+                  <div class="id-charts-grid">
+                    <div class="id-chart-card">
+                      <h4>Policies Conversion Performance (Line)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-bancassurance-line"></div>
+                    </div>
+                    <div class="id-chart-card">
+                      <h4>Partner Bank Sales Productivity Score (Bar)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-bancassurance-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-block">
+              <h3>5. Key Findings</h3>
+              <ul>
+                <li><strong>Conversion Gaps:</strong> Bank sales agents dropped over 35% of high-intent inquiries due to delays in receiving underwriting quotes from head offices.</li>
+                <li><strong>Risk Variances:</strong> Apex Bank represented the largest sales pipeline volume but had a high claims loss ratio of 58%, requiring strict pricing reviews.</li>
+              </ul>
+            </section>
+
+            <section class="case-block">
+              <h3>6. Recommendations & Impact</h3>
+              <p><strong>System Integrations:</strong> Advised implementing API integrations between the banks' lead systems and the core insurance quote engines. This enables branch managers to deliver quotes in real-time, eliminating manual verification loops.</p>
+              <p style="font-weight: 600; color:var(--success);">Business Impact: Boosted sales conversion rates by 22% in under six months, and reduced the average underwriting turnaround cycle from 4 days to 30 seconds.</p>
+            </section>
+          </div>
+        </article>
+
+        <!-- STUDY 4: SPOTIFY -->
+        <article class="case-study-detail" id="study-spotify">
+          <div class="case-header">
+            <h2>Spotify Listening Behavior Research</h2>
+            <div class="case-meta">
+              <span>Domain: User Experience</span>
+              <span>Tech Stack: Python, SQL, Power BI</span>
+              <span>Project Scale: 840 Listening Hours</span>
+            </div>
+          </div>
+
+          <div class="case-narrative">
+            <section class="case-block">
+              <h3>1. Business Challenge</h3>
+              <p>Understanding acoustic user engagement profiles and identifying skip triggers in song playbacks. By conducting research over personal listening histories (tracks, skip records, play durations, devices), I aimed to establish data-driven rules for compiling high-retention acoustic playlists.</p>
+            </section>
+
+            <section class="case-block">
+              <h3>2. Data Sources</h3>
+              <p>Extracted listening logs in JSON from Spotify account files, parsed metadata, and loaded records into a staging database:</p>
+              <div class="code-block">
+                <span class="code-comment"># Parse Spotify listening histories in Python</span><br>
+                <span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd<br>
+                df = pd.read_json(<span class="code-string">"ListeningHistory.json"</span>)<br>
+                df[<span class="code-string">'PlayDuration_Min'</span>] = df[<span class="code-string">'msPlayed'</span>] / 60000<br>
+                df[<span class="code-string">'IsSkipped'</span>] = df.apply(<span class="code-keyword">lambda</span> row: row[<span class="code-string">'PlayDuration_Min'</span>] < 0.5, axis=1)<br>
+                df.to_csv(<span class="code-string">"ParsedStreams.csv"</span>, index=<span class="code-keyword">False</span>)
+              </div>
+            </section>
+
+            <!-- Custom Embedded Interactive Dashboard widget -->
+            <section class="case-block">
+              <h3>3. Interactive Acoustic Dashboard</h3>
+              <p style="margin-bottom: 1.5rem;">Select device layouts below to update listening duration trends and skip percentages.</p>
+              
+              <div class="interactive-dashboard">
+                <div class="id-header">
+                  <div class="id-title-area">
+                    <div class="id-title">SPOTIFY ACOUSTIC ENGAGEMENT INTELLIGENCE</div>
+                    <div class="id-subtitle">Acoustic User Habits & Skip Triggers Analyzer</div>
+                  </div>
+                  <div class="id-filters">
+                    <select class="id-filter-select" id="filter-spotify-device">
+                      <option value="all">All Audio Profiles</option>
+                      <option value="mobile">Mobile App Audio</option>
+                      <option value="desktop">Desktop Audio</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="id-content">
+                  <div class="id-stats-grid">
+                    <div class="id-stat-box">
+                      <label>Cumulative Playback (Hrs)</label>
+                      <div class="number" id="kpi-spotify-hours">840h</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Acoustic Skip Rate</label>
+                      <div class="number" id="kpi-spotify-skips">24.2%</div>
+                    </div>
+                    <div class="id-stat-box">
+                      <label>Unique Tracks Listened</label>
+                      <div class="number" id="kpi-spotify-tracks">2,890</div>
+                    </div>
+                  </div>
+                  <div class="id-charts-grid">
+                    <div class="id-chart-card">
+                      <h4>Hourly Listening Profiles (Line)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-spotify-line"></div>
+                    </div>
+                    <div class="id-chart-card">
+                      <h4>Top Musical Genre Preferences (Bar)</h4>
+                      <div class="id-chart-canvas-wrapper" id="chart-spotify-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-block">
+              <h3>4. Key Findings</h3>
+              <ul>
+                <li><strong>Mobile Commute Skips:</strong> Skip ratios spiked to 28.5% on mobile devices during morning commutes (8 AM - 10 AM), caused by high-energy track selections.</li>
+                <li><strong>Desktop Retention:</strong> Ambient lofi and synthwave selections played on desktop clients between 1 PM - 5 PM had a 95% retention score, confirming their role as background music for focus work.</li>
+              </ul>
+            </section>
+
+            <section class="case-block">
+              <h3>5. Recommendations & Impact</h3>
+              <p><strong>Playlist Compilation:</strong> Compiled focused work playlists prioritizing steady-tempo ambient, synthwave, and lofi genres, and scheduled high-tempo rock tracks strictly for morning exercise periods.</p>
+              <p style="font-weight: 600; color:var(--success);">Business Impact: Achieved a 35% reduction in track skip ratios, enhancing overall listening retention and focus durations during core working blocks.</p>
+            </section>
+          </div>
+        </article>
+
+      </main>
+
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="logo">
+        <div class="logo-symbol">J</div>
+        <span>JUNAYED RAHMAN</span>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Junayed Rahman. All rights reserved. Premium Data Portfolio.
+      </div>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="projects.html" class="footer-link">Projects</a>
+        <a href="knowledge-hub.html" class="footer-link">Knowledge Hub</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SCRIPTS SYSTEM --- -->
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/case-studies-data.js"></script>
+  
+  <!-- Dynamic sidebar toggles -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initCaseStudiesSidebar();
+    });
+
+    function initCaseStudiesSidebar() {
+      const sidebarItems = document.querySelectorAll('.case-sidebar-item');
+      const studyDetails = document.querySelectorAll('.case-study-detail');
+
+      // Check URL query parameters to open specific case study directly
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetStudy = urlParams.get('study');
+
+      if (targetStudy) {
+        const item = document.querySelector(`.case-sidebar-item[data-study="${targetStudy}"]`);
+        if (item) {
+          sidebarItems.forEach(i => i.classList.remove('active'));
+          studyDetails.forEach(d => d.classList.remove('active'));
+
+          item.classList.add('active');
+          const detail = document.getElementById(`study-${targetStudy}`);
+          if (detail) {
+            detail.classList.add('active');
+            
+            // Scroll to the active study
+            setTimeout(() => {
+              detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+          }
+        }
+      }
+
+      sidebarItems.forEach(item => {
+        item.addEventListener('click', () => {
+          sidebarItems.forEach(i => i.classList.remove('active'));
+          studyDetails.forEach(d => d.classList.remove('active'));
+
+          item.classList.add('active');
+          const studyId = item.getAttribute('data-study');
+          const detail = document.getElementById(`study-${studyId}`);
+          if (detail) {
+            detail.classList.add('active');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Junayed Rahman, Senior Data Analyst & Insurance BI Consultant. Submit consulting project inquiries or download his resume.">
+  <title>Contact & Consulting Ingestion | Junayed Rahman</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-hero {
+      background: radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+      padding: 6rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    /* Interactive Resume Preview styles */
+    .resume-preview-card {
+      background: #0D131E;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .res-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .res-contact-info {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+    }
+    .res-section-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 1.5rem 0 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 0.25rem;
+    }
+    .res-item {
+      margin-bottom: 1rem;
+    }
+    .res-item-title-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .res-item-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+    
+    @media (max-width: 768px) {
+      .res-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .res-contact-info {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- --- NAVIGATION --- -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-symbol">J</div>
+        <span>JUNAYED RAHMAN</span>
+      </a>
+      
+      <button class="hamburger" aria-label="Toggle Navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+        <li><a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a></li>
+        <li><a href="contact.html" class="nav-link active nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- --- CONTACT HERO --- -->
+  <header class="contact-hero">
+    <div class="container" style="padding-top: 2rem;">
+      <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 1rem;">Contact & Ingestion</h1>
+      <p style="max-width: 600px; color: var(--text-secondary); font-size: 1.1rem;">Let's establish high-fidelity analytics connections. Reach out for consulting, employment, or project audits.</p>
+    </div>
+  </header>
+
+  <!-- --- CONTACT BODY SECTION --- -->
+  <section class="section-padding">
+    <div class="container contact-grid">
+      
+      <!-- Left Column: Details & CTA -->
+      <div class="contact-info-column">
+        <div class="contact-cta-msg gradient-text">
+          "Let's turn complex data into strategic business decisions."
+        </div>
+        
+        <p style="color:var(--text-secondary); font-size: 1rem; line-height: 1.6;">
+          Are you looking to streamline your Power BI architectures, clean up messy SQL queries, audit broker commissions, or extract intelligence from underwriting models? Submit your business parameters, and I'll deliver a structured response.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-text">
+              <label>Direct Inquiries</label>
+              <span>junayed.rahman@email.com</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">🔗</div>
+            <div class="contact-item-text">
+              <label>LinkedIn Channel</label>
+              <a href="#" class="accent-text">linkedin.com/in/junayed-rahman ↗</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">💻</div>
+            <div class="contact-item-text">
+              <label>GitHub Repository</label>
+              <a href="#" class="accent-text">github.com/junayed-rahman ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social-links">
+          <a href="#" class="social-circle-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-circle-btn" aria-label="GitHub">git</a>
+          <a href="#" class="social-circle-btn" aria-label="Twitter">tw</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Premium Form -->
+      <div class="glass-card contact-form-card">
+        <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Consulting Ingestion Form</h3>
+        
+        <form id="consulting-contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+            <label for="name" class="form-label">Full Name *</label>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+            <label for="email" class="form-label">Email Address *</label>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="company" name="company" class="form-input" placeholder=" ">
+            <label for="company" class="form-label">Organization / Company</label>
+          </div>
+
+          <div class="form-group">
+            <select id="inquiry-type" name="inquiry-type" class="form-input" style="background:#0D131E; cursor:pointer;" required>
+              <option value="consulting">Consulting Project Ingestion</option>
+              <option value="employment">Full-Time / Contract Placement</option>
+              <option value="audit">Operational Dashboard Audit</option>
+              <option value="other">General Inquiry</option>
+            </select>
+            <label for="inquiry-type" class="form-label" style="top: -0.6rem; left: 0.8rem; font-size: 0.75rem; background: #131A29; padding: 0 0.4rem; color: var(--accent); border-radius: 4px;">Inquiry Class *</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" class="form-input" placeholder=" " required></textarea>
+            <label for="message" class="form-label">Project Objectives & Requirements *</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Transmit Ingestion Data</button>
+          
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- --- SECTION 9.5: DETAILED INTERACTIVE RESUME PREVIEW & DOWNLOAD --- -->
+  <section class="section-padding" style="border-top:1px solid var(--border); background:#070A11;" id="resume-box">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <h2>Professional Resume Showcase</h2>
+        <p>A digital blueprint of my analytical capabilities, history, and education. Select below to download a PDF copy.</p>
+        <div style="margin-top: 1.5rem;">
+          <!-- Simulated elegant download action -->
+          <a href="#" onclick="alert('Downloading high-fidelity resume PDF...'); return false;" class="btn btn-outline" style="gap: 0.75rem;">
+            <span>📥</span> Download High-Fidelity Resume (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- High-fidelity CV Preview Mockup -->
+      <div class="resume-preview-card">
+        <div class="res-header">
+          <div>
+            <h3 style="font-size: 1.8rem; color:#FFFFFF; margin-bottom: 0.25rem;">Junayed Rahman</h3>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color:var(--accent);">Senior Data Analyst & BI Developer</p>
+          </div>
+          <div class="res-contact-info">
+            junayed.rahman@email.com<br>
+            linkedin.com/in/junayed-rahman<br>
+            Dhaka, Bangladesh
+          </div>
+        </div>
+
+        <div class="res-section-title">Professional Summary</div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+          Senior Data Analyst with over 5 years of experience delivering high-impact business intelligence and data warehousing solutions. Deep domain expertise in General Insurance (underwriting analytics, claims reserve audits, broker commission tracking). Highly proficient in engineering complex SQL scripts, designing automated Power BI pipelines, and transforming raw databases into board-ready visual narratives.
+        </p>
+
+        <div class="res-section-title">Core Technical Assets</div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono); line-height: 1.6;">
+          <strong>Languages & Databases:</strong> SQL (SQL Server, PostgreSQL, MySQL), Python (Pandas, NumPy, Seaborn), Excel (PowerPivot)<br>
+          <strong>Visualizations & BI:</strong> Microsoft Power BI (Advanced DAX, RLS, star schemas), Tableau Desktop, dashboard grid designs<br>
+          <strong>Business Capabilities:</strong> Underwriting risk auditing, claims loss ratios, sales commission structures, KPI design
+        </p>
+
+        <div class="res-section-title">Selected Milestones</div>
+        
+        <div class="res-item">
+          <div class="res-item-title-row">
+            <span>Senior Analytics Consultant | General Insurance Corp.</span>
+            <span>2023 - Present</span>
+          </div>
+          <div class="res-item-desc">
+            - Developed an interactive risk underwriting system in Power BI, reducing portfolio claims losses by 5.2%.<br>
+            - Engineered SQL audit routines that eliminated over $280k in annual broker commission payout leakage.<br>
+            - Oversaw ETL procedures that integrated lead conversions across 12 partner banks, boosting conversion efficiency by 22%.
+          </div>
+        </div>
+
+        <div class="res-item">
+          <div class="res-item-title-row">
+            <span>Data Analyst | Assurance Services Group</span>
+            <span>2021 - 2023</span>
+          </div>
+          <div class="res-item-desc">
+            - Constructed claims ledger reconciliation audits, isolating $450k in active premium payment errors.<br>
+            - Designed sales pipeline trackers using SQL Server and automated daily email KPI reports for field operations.<br>
+            - Analyzed monthly outstanding claim reserve variations, producing reports used directly by senior actuaries.
+          </div>
+        </div>
+
+        <div class="res-section-title">Education & Credentials</div>
+        <div class="res-item">
+          <div class="res-item-title-row">
+            <span>B.Sc. in Business Information Systems</span>
+            <span>Graduated 2019</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">
+            Microsoft Certified: Power BI Data Analyst Associate (PL-300)<br>
+            Specialized Certificate in actuarial Risk Analytics & Underwriting
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="logo">
+        <div class="logo-symbol">J</div>
+        <span>JUNAYED RAHMAN</span>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Junayed Rahman. All rights reserved. Premium Data Portfolio.
+      </div>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="projects.html" class="footer-link">Projects</a>
+        <a href="case-studies.html" class="footer-link">Case Studies</a>
+        <a href="knowledge-hub.html" class="footer-link">Knowledge Hub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SCRIPTS SYSTEM --- -->
+  <script src="js/main.js"></script>
+</body>
+</html>
